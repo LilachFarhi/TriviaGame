@@ -1,4 +1,3 @@
-
 package triviagame;
 
 public enum Category

@@ -27,12 +27,14 @@ public class FileManager {
         
         try
         {
-            objectStream = new ObjectInputStream(new FileInputStream(fileName));
+            objectStream = 
+                new ObjectInputStream(new FileInputStream(fileName));
             Object currentObject = objectStream.readObject();
             
             while (currentObject != null)
             {
                 list.add(currentObject);
+                currentObject = objectStream.readObject();
             }
         }
         catch (EOFException exception)
@@ -53,7 +55,8 @@ public class FileManager {
     public void WriteAllDataToFile(List<Object> data) 
             throws FileNotFoundException, IOException
     {
-        ObjectOutputStream objectStream = new ObjectOutputStream(new FileOutputStream(fileName));
+        ObjectOutputStream objectStream = 
+            new ObjectOutputStream(new FileOutputStream(fileName));
 
         for (int i = 0; i < data.size(); i++)
         {

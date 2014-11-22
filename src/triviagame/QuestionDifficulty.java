@@ -1,7 +1,6 @@
 package triviagame;
 
-public enum QuestionDifficulty 
-{
+public enum QuestionDifficulty {
     EASY,
     MEDIUM,
     HARD

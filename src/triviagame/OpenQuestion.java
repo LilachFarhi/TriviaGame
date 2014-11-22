@@ -7,7 +7,8 @@ public class OpenQuestion extends Question {
     private Category category;
     private QuestionDifficulty difficulty;
     
-    public OpenQuestion(String question, String answer, QuestionDifficulty difficulty, Category category)
+    public OpenQuestion(String question, String answer, 
+            QuestionDifficulty difficulty, Category category)
     {
         this.question = question;
         this.answer = answer;
