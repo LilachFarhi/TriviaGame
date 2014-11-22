@@ -217,9 +217,16 @@ public class TriviaGame {
     {
         List<Map<QuestionDifficulty, List<Question>>> list = new ArrayList<>(triviaData.values());
         List<List<Question>> allListQuestions = new ArrayList<>();
-        list.stream().forEach((currentMap) -> { allListQuestions.addAll(currentMap.values());});
+        for (Map<QuestionDifficulty, List<Question>> list1 : list) 
+        {
+            allListQuestions.addAll(list1.values());
+        }
+        //list.stream().forEach((currentMap) -> { allListQuestions.addAll(currentMap.values());});
         List<Question> allQuestions = new ArrayList<>();
-        allListQuestions.stream().forEach((allListQuestion) -> {allQuestions.addAll(allListQuestion);});
+        for (List<Question> allListQuestion : allListQuestions) {
+            allQuestions.addAll(allListQuestion);
+        }
+        // allListQuestions.stream().forEach((allListQuestion) -> {allQuestions.addAll(allListQuestion);});
          
         for(int i = 0; i < allQuestions.size(); i++)
         {
